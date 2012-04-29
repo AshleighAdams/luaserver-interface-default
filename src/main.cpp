@@ -1,8 +1,8 @@
 #include "main.h"
 
-void* DLL_EXPORT GetInterface())
+void* DLL_EXPORT GetInterface()
 {
-    return 0;
+	return new CMicroHTTPDInterface();
 }
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)

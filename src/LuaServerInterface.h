@@ -33,8 +33,8 @@ class ILuaServerInterface
 {
 public:
 	virtual ~ILuaServerInterface(){}
-	virtual Init(unsigned int Port) = 0;
-	virtual SetCallback(FnNewConnection Callback) = 0;
+	virtual bool Init(unsigned int Port) = 0;
+	virtual bool SetCallback(FnNewConnection Callback) = 0;
 };
 
 
