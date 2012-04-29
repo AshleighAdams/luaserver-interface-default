@@ -24,15 +24,17 @@ struct ServerConnection
 	Cookies				Cookies;
 	ResponseHeaders 	Headers;
 	unsigned int 		ErrorCode;
+	unsigned char*		pData;
+	unsigned int		DataLength;
 };
 
 
 class ILuaServerInterface
 {
 public:
-	virtual ~ILuaServerInterface();
+	virtual ~ILuaServerInterface(){}
+	virtual Init(unsigned int Port) = 0;
 	virtual SetCallback(FnNewConnection Callback) = 0;
-	
 };
 
 
