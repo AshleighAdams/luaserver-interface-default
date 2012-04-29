@@ -10,19 +10,20 @@
 
 // Some typedefs to make things easier
 typedef std::unordered_map<std::string, std::string> ResponseHeaders;
+typedef std::unordered_map<std::string, std::string> Cookies;
 typedef std::function<void(ILuaServerConnection* Connection)> FnNewConnection;
 
 // Here is what needs to be implemented.
 
-class ILuaServerConnection
+struct ServerConnection
 {
-public:
-	virtual ~ILuaServerConnection(){}
-	std::string& 			IP() = 0;
-	std::string& 			Method() = 0;
-	std::string&			RequestedFile() = 0;
-	std::string&			VersionString() = 0;
-	ResponseHeaders& 		Headers() = 0;
+	std::string 		IP;
+	std::string 		Method;
+	std::string			RequestedFile;
+	std::string			VersionString;
+	Cookies				Cookies;
+	ResponseHeaders 	Headers;
+	unsigned int 		ErrorCode;
 };
 
 
