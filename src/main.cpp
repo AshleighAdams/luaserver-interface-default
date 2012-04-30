@@ -48,14 +48,14 @@ int Connection(void *cls, MHD_Connection *connection, const char *url, const cha
 	con.pData = 0;
 	con.DataLength = 0;
 	
-	sockaddr *so;
-	so = MHD_get_connection_info(connection, MHD_CONNECTION_INFO_CLIENT_ADDRESS)->client_addr;
+	//sockaddr *so;
+	//so = MHD_get_connection_info(connection, MHD_CONNECTION_INFO_CLIENT_ADDRESS)->client_addr;
 	con.IP = "0.0.0.0"; //inet_ntoa( ((sockaddr_in*)so)->sin_addr );
 	
 	// Hurp
 	MHD_KeyValueIterator itt_key = &SetupHeaderCrap;
 	{
-		//boost::mutex::scoped_lock lock_thingy(g_Mutex);
+		boost::mutex::scoped_lock lock_thingy(g_Mutex);
 		MHD_get_connection_values(connection, MHD_HEADER_KIND, 				itt_key, 0);
 		MHD_get_connection_values(connection, MHD_COOKIE_KIND, 				itt_key, 0);
 		MHD_get_connection_values(connection, MHD_POSTDATA_KIND, 			itt_key, 0);

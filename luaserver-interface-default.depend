@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1335773438 source:c:\users\c0bra\projects\luaserver-interface-default\src\main.cpp
+1335787037 source:c:\users\c0bra\projects\luaserver-interface-default\src\main.cpp
 	"main.h"
+	<sstream>
+	<boost/thread.hpp>
 
-1335773374 c:\users\c0bra\projects\luaserver-interface-default\src\main.h
+1335781961 c:\users\c0bra\projects\luaserver-interface-default\src\main.h
 	"microhttpd.h"
 	<windows.h>
 	"LuaServerInterface.h"
 
-1335773422 c:\users\c0bra\projects\luaserver-interface-default\src\luaserverinterface.h
+1335781916 c:\users\c0bra\projects\luaserver-interface-default\src\luaserverinterface.h
 	<functional>
 	<list>
 	<string>
