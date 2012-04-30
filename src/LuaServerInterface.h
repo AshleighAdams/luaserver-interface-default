@@ -12,8 +12,8 @@
 struct ServerConnection;
 
 // Some typedefs to make things easier
-typedef std::unordered_map<std::string, std::string> MapResponseHeaders;
-typedef std::unordered_map<std::string, std::string> MapCookies;
+typedef std::unordered_map<std::string, std::string> MapHeaders;
+typedef std::unordered_map<std::string, std::string> MapS2S;
 typedef std::function<void(ServerConnection* pConnection)> FnNewConnection;
 
 // Here is what needs to be implemented.
@@ -24,8 +24,11 @@ struct ServerConnection
 	std::string 		Method;
 	std::string			RequestedFile;
 	std::string			VersionString;
-	MapCookies			Cookies;
-	MapResponseHeaders 	Headers;
+	MapS2S				Cookies;
+	MapS2S 				Headers;
+	MapS2S				GETParams;
+	MapS2S				POSTParams;
+	MapS2S		 		ResponseHeaders;
 	unsigned int 		ErrorCode;
 	unsigned char*		pData;
 	unsigned int		DataLength;
@@ -38,6 +41,7 @@ public:
 	virtual ~ILuaServerInterface(){}
 	virtual bool Init(unsigned int Port) = 0;
 	virtual bool SetCallback(FnNewConnection Callback) = 0;
+	virtual const char* GetInterfaceName() = 0;
 };
 
 

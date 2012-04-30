@@ -11,13 +11,17 @@
 #include "microhttpd.h"
 #include <windows.h>
 
+
 #include "LuaServerInterface.h"
 
 class CMicroHTTPDInterface : public ILuaServerInterface
 {
+public:
+	FnNewConnection m_Func;
 	~CMicroHTTPDInterface();
 	bool Init(unsigned int Port);
 	bool SetCallback(FnNewConnection Callback);
+	const char* GetInterfaceName();
 };
 
 #ifdef BUILD_DLL

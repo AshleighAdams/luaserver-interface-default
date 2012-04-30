@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1335773438 source:c:\users\c0bra\projects\luaserver-interface-default\src\main.cpp
+	"main.h"
+
+1335773374 c:\users\c0bra\projects\luaserver-interface-default\src\main.h
+	"microhttpd.h"
+	<windows.h>
+	"LuaServerInterface.h"
+
+1335773422 c:\users\c0bra\projects\luaserver-interface-default\src\luaserverinterface.h
+	<functional>
+	<list>
+	<string>
+	<unordered_map>
+
