@@ -8,10 +8,13 @@
 #include <string>
 #include <unordered_map>
 
+// Forward decleration
+struct ServerConnection;
+
 // Some typedefs to make things easier
-typedef std::unordered_map<std::string, std::string> ResponseHeaders;
-typedef std::unordered_map<std::string, std::string> Cookies;
-typedef std::function<void(ILuaServerConnection* Connection)> FnNewConnection;
+typedef std::unordered_map<std::string, std::string> MapResponseHeaders;
+typedef std::unordered_map<std::string, std::string> MapCookies;
+typedef std::function<void(ServerConnection* pConnection)> FnNewConnection;
 
 // Here is what needs to be implemented.
 
@@ -21,8 +24,8 @@ struct ServerConnection
 	std::string 		Method;
 	std::string			RequestedFile;
 	std::string			VersionString;
-	Cookies				Cookies;
-	ResponseHeaders 	Headers;
+	MapCookies			Cookies;
+	MapResponseHeaders 	Headers;
 	unsigned int 		ErrorCode;
 	unsigned char*		pData;
 	unsigned int		DataLength;

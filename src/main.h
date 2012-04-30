@@ -1,5 +1,14 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
+
+#ifdef _WIN32
+#define WINDOWS
+#endif
+#ifdef _WIN64
+#define WINDOWS
+#endif
+
+#include "microhttpd.h"
 #include <windows.h>
 
 #include "LuaServerInterface.h"
@@ -15,6 +24,10 @@ class CMicroHTTPDInterface : public ILuaServerInterface
     #define DLL_EXPORT __declspec(dllexport)
 #else
     #define DLL_EXPORT __declspec(dllimport)
+#endif
+
+#ifndef WINDOWS // Linux
+#define DLL_EXPORT
 #endif
 
 #ifdef __cplusplus

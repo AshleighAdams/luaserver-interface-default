@@ -1,7 +1,5 @@
 #include "main.h"
 
-#include "microhttpd.h"
-
 CMicroHTTPDInterface* g_pInterface = 0;
 
 bool CMicroHTTPDInterface::Init(unsigned int Port)
@@ -11,6 +9,7 @@ bool CMicroHTTPDInterface::Init(unsigned int Port)
 
 bool CMicroHTTPDInterface::SetCallback(FnNewConnection Callback)
 {
+	return false;
 }
 
 CMicroHTTPDInterface::~CMicroHTTPDInterface()
