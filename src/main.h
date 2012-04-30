@@ -6,7 +6,7 @@
 
 class CMicroHTTPDInterface : public ILuaServerInterface
 {
-	~CMicroHTTPDInterface(){}
+	~CMicroHTTPDInterface();
 	bool Init(unsigned int Port);
 	bool SetCallback(FnNewConnection Callback);
 };
@@ -16,11 +16,12 @@ class CMicroHTTPDInterface : public ILuaServerInterface
 #else
     #define DLL_EXPORT __declspec(dllimport)
 #endif
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-void* DLL_EXPORT GetInterface();
+ILuaServerInterface* DLL_EXPORT GetInterface();
 #ifdef __cplusplus
 }
 #endif

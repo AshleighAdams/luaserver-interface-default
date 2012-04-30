@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="src\LuaServerInterface.h" open="1" top="0" tabpos="3">
+		<Cursor position="885" topLine="16" />
+	</File>
+	<File name="src\main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="483" topLine="0" />
+	</File>
+	<File name="src\main.h" open="1" top="0" tabpos="2">
+		<Cursor position="125" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

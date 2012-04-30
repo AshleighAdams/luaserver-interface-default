@@ -1,8 +1,28 @@
 #include "main.h"
 
-void* DLL_EXPORT GetInterface()
+#include "microhttpd.h"
+
+CMicroHTTPDInterface* g_pInterface = 0;
+
+bool CMicroHTTPDInterface::Init(unsigned int Port)
 {
-	return new CMicroHTTPDInterface();
+	return false;
+}
+
+bool CMicroHTTPDInterface::SetCallback(FnNewConnection Callback)
+{
+}
+
+CMicroHTTPDInterface::~CMicroHTTPDInterface()
+{
+	g_pInterface = 0;
+}
+
+ILuaServerInterface* DLL_EXPORT GetInterface()
+{
+	if(!g_pInterface)
+		g_pInterface = new CMicroHTTPDInterface();
+	return g_pInterface;
 }
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
