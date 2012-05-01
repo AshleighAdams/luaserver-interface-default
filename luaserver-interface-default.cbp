@@ -15,11 +15,12 @@
 				<Option createStaticLib="1" />
 				<Compiler>
 					<Add option="-Wall" />
-					<Add option="-DBUILD_DLL" />
 					<Add option="-g" />
+					<Add option="-DBUILD_DLL" />
 				</Compiler>
 				<Linker>
 					<Add library="user32" />
+					<Add library="microhttpd" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -30,13 +31,14 @@
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
 				<Compiler>
+					<Add option="-O2" />
 					<Add option="-Wall" />
 					<Add option="-DBUILD_DLL" />
-					<Add option="-O2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 					<Add library="user32" />
+					<Add library="microhttpd" />
 				</Linker>
 			</Target>
 		</Build>

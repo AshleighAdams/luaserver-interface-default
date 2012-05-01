@@ -25,6 +25,7 @@ struct ServerConnection
 	std::string			RequestedFile;
 	std::string			VersionString;
 	MapS2S				Cookies;
+	MapS2S				SetCookies;
 	MapS2S 				Headers;
 	MapS2S				GETParams;
 	MapS2S				POSTParams;
@@ -32,6 +33,7 @@ struct ServerConnection
 	unsigned int 		ErrorCode;
 	unsigned char*		pData;
 	unsigned int		DataLength;
+	bool				DataIsConstant;
 };
 
 
