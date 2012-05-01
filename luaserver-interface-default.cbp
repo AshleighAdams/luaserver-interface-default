@@ -39,6 +39,7 @@
 					<Add option="-s" />
 					<Add library="user32" />
 					<Add library="microhttpd" />
+					<Add library="ws2_32" />
 				</Linker>
 			</Target>
 		</Build>

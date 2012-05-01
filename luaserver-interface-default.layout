@@ -2,12 +2,12 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="src\LuaServerInterface.h" open="1" top="0" tabpos="3">
-		<Cursor position="909" topLine="17" />
+		<Cursor position="909" topLine="0" />
 	</File>
 	<File name="src\main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2073" topLine="55" />
+		<Cursor position="134" topLine="0" />
 	</File>
 	<File name="src\main.h" open="1" top="0" tabpos="2">
-		<Cursor position="270" topLine="4" />
+		<Cursor position="270" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
