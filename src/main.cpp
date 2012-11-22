@@ -12,6 +12,7 @@
 #include <net/if.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#define LINUX
 #endif
 
 using namespace std;
@@ -138,6 +139,17 @@ CMicroHTTPDInterface::~CMicroHTTPDInterface()
 	g_pInterface = 0;
 }
 
+#ifdef LINUX
+
+extern "C" ILuaServerInterface* GetInterface()
+{
+	if(!g_pInterface)
+		g_pInterface = new CMicroHTTPDInterface();
+	return g_pInterface;
+}
+
+#else
+
 ILuaServerInterface* DLL_EXPORT GetInterface()
 {
 	if(!g_pInterface)
@@ -160,3 +172,5 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     }
     return 1;
 }
+
+#endif

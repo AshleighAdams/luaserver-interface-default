@@ -9,8 +9,10 @@
 #endif
 
 #include "microhttpd.h"
-#include <windows.h>
 
+#ifdef WINDOWS
+#include <windows.h>
+#endif
 
 #include "LuaServerInterface.h"
 
@@ -24,14 +26,12 @@ public:
 	const char* GetInterfaceName();
 };
 
+#ifdef WINDOWS
+
 #ifdef BUILD_DLL
     #define DLL_EXPORT __declspec(dllexport)
 #else
     #define DLL_EXPORT __declspec(dllimport)
-#endif
-
-#ifndef WINDOWS // Linux
-#define DLL_EXPORT
 #endif
 
 #ifdef __cplusplus
@@ -42,4 +42,7 @@ ILuaServerInterface* DLL_EXPORT GetInterface();
 #ifdef __cplusplus
 }
 #endif
+
+#endif // WINDOWS
+
 #endif // __MAIN_H__
