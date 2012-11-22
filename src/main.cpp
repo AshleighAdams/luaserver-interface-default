@@ -98,7 +98,7 @@ int Connection(void *cls, MHD_Connection *connection, const char *url, const cha
 	for(auto it = con.SetCookies.begin(); it != con.SetCookies.end(); it++)
 		ss << it->first << "=" << it->second << ";";
 	
-	if(con.Cookies.size() > 0)
+	if(con.SetCookies.size() > 0)
 		MHD_add_response_header(response, "Set-Cookie", ss.str().c_str());
 		
 	int ret = MHD_queue_response (connection, con.ErrorCode, response);
